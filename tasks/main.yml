@@ -4,7 +4,7 @@
   ec2_group:
     state: "{{ ec2_group_state | d('present') }}"
     name: '{{ security_group }}'
-    description: Security group for Edgemicro
+    description: '{{ security_group_description }}'
     aws_access_key: "{{ aws_access_key|default(lookup('env', 'AWS_ACCESS_KEY_ID')) }}"
     aws_secret_key: "{{ aws_secret_key|default(lookup('env', 'AWS_SECRET_ACCESS_KEY')) }}"
     aws_region: "{{ aws_region|default(lookup('env', 'AWS_REGION'))  }}"
